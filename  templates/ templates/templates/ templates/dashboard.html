@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кабинет</title>
+  <meta name="description" content="Личный кабинет приложения Финансы Просто" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Финансы <span>Просто</span></div>
+    <a class="icon-btn" href="/logout">Выйти</a>
+  </header>
+
+  <main class="container stack">
+    <section class="card dashboard-card">
+      <div class="row">
+        <div>
+          <p class="mini">Личный кабинет</p>
+          <h1 style="margin:0 0 8px;">Привет, {{ user["username"] }}</h1>
+          <p class="muted">Твой текущий баланс:</p>
+        </div>
+        <div class="balance">{{ "%.2f"|format(user["balance"]) }} ₽</div>
+      </div>
+    </section>
+
+    <section class="card dashboard-card">
+      <h2 style="margin-top:0;">Демо-пополнение</h2>
+      <p class="muted">Это тестовая форма, чтобы проверить, что баланс обновляется.</p>
+
+      <form method="post" action="/deposit-demo" class="panel">
+        <input class="field" type="number" name="amount" step="0.01" placeholder="Сумма пополнения" required />
+        <button class="submit green" type="submit">Добавить на баланс</button>
+      </form>
+    </section>
+
+    <section class="card dashboard-card">
+      <h2 style="margin-top:0;">Быстрые разделы</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>Вклады</h3>
+          <p class="muted">Подборки и полезные предложения.</p>
+        </article>
+        <article class="panel">
+          <h3>Карты</h3>
+          <p class="muted">Кэшбэк, бонусы и офферы.</p>
+        </article>
+        <article class="panel">
+          <h3>Инвестиции</h3>
+          <p class="muted">Статьи и аналитика.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
