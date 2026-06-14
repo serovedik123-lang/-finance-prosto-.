@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Финансы Просто</title>
+  <meta name="description" content="Мобильное приложение с регистрацией, входом и балансом." />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Финансы <span>Просто</span></div>
+    <a class="icon-btn" href="/login">Вход</a>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div class="badge">Mobile-first</div>
+      <h1>Финансовое приложение для телефона</h1>
+      <p>Регистрация, вход, личный кабинет и баланс в одном удобном интерфейсе.</p>
+      <div class="actions">
+        <a class="btn primary" href="/register">Регистрация</a>
+        <a class="btn secondary" href="/login">Войти</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card info">
+        <h3>Регистрация</h3>
+        <p>Создай аккаунт за минуту и открой доступ к кабинету.</p>
+      </article>
+
+      <article class="card info">
+        <h3>Баланс</h3>
+        <p>Показывай сумму в личном кабинете и управляй начислениями.</p>
+      </article>
+
+      <article class="card info">
+        <h3>Удобно на телефоне</h3>
+        <p>Интерфейс адаптирован под смартфоны и быстрые действия.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
