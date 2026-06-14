@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Регистрация</title>
+  <meta name="description" content="Регистрация в приложении Финансы Просто" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <main class="auth-wrap">
+    <div class="card auth-card">
+      <h2>Регистрация</h2>
+      <p class="mini">Создай аккаунт и получи доступ к личному кабинету.</p>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="msg">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form method="post">
+        <input class="field" type="text" name="username" placeholder="Логин" autocomplete="username" required />
+        <input class="field" type="password" name="password" placeholder="Пароль" autocomplete="new-password" required />
+        <button class="submit" type="submit">Создать аккаунт</button>
+      </form>
+
+      <p class="mini">Уже есть аккаунт? <a class="link" href="/login">Войти</a></p>
+      <p class="mini"><a class="link" href="/">На главную</a></p>
+    </div>
+  </main>
+</body>
+</html>
